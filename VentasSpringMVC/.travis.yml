@@ -1,5 +1,8 @@
 languaje: java
 
+sudo: required
+
+os: linux
 
 
 
