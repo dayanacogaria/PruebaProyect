@@ -9,6 +9,21 @@ public class Emp {
         private String tipodoc;
         private String documento;
 
+    public Emp() {
+    }
+
+    public Emp(String nombres, String apellido, String correo, String direccion, String tipodoc, String documento) {
+        this.nombres = nombres;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.direccion = direccion;
+        this.tipodoc = tipodoc;
+        this.documento = documento;
+    }
+
+   
+
+   
     public int getId() {
         return id;
     }

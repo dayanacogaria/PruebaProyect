@@ -10,16 +10,32 @@ import org.springframework.jdbc.core.RowMapper;
 import com.cloudsrcsoft.beans.Emp;
 
 public class EmpDao {
-	JdbcTemplate template;
+    
+	private JdbcTemplate template;
 
-	public void setTemplate(JdbcTemplate template) {
-		this.template = template;
+	public void setTemplate() {
+		template = new JdbcTemplate();
 	}
 
 	public int save(Emp p) {
-		String sql = "insert into persona(nombres, apellido,correo,direccion,tipodoc,documento) values('" + p.getNombres() + "','" + p.getApellido()
+            
+             String  sql = "";
+            if (p == null) {
+                
+                System.out.println("no puede ir ningun valor null");
+               
+            }
+            else{
+            
+              sql = "insert into persona(nombres, apellido,correo,direccion,tipodoc,documento) values('" + p.getNombres() + "','" + p.getApellido()
 				+ "','" + p.getCorreo() + "','"+p.getDireccion()+"','"+p.getTipodoc()+"','"+p.getDocumento()+"')";
-		return template.update(sql);
+              
+            
+            
+            }
+         
+		
+          return template.update(sql);
 	}
 
 	public int update(Emp p) {
